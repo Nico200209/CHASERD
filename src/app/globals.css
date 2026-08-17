@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --obsidian: #0b0b0c;
+  --gunmetal: #16171a;
+  --graphite: #22242a;
+  --steel: #8a8f98;
+  --bone: #e9e7e4;
+  --brass: #b08d57;
+}
+
+@theme inline {
+  --color-obsidian: var(--obsidian);
+  --color-gunmetal: var(--gunmetal);
+  --color-graphite: var(--graphite);
+  --color-steel: var(--steel);
+  --color-bone: var(--bone);
+  --color-brass: var(--brass);
+
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-instrument-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--bone);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-rise {
+  opacity: 0;
+  animation: fade-rise 0.7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
